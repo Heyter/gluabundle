@@ -1,9 +1,9 @@
 {
-	"name": "luabundle",
+	"name": "gluabundle",
 	"description": "Bundles several Lua files into a single file.",
 	"version": "1.7.0",
 	"author": "Benjamin Dobell @Benjamin-Dobell",
-	"bugs": "https://github.com/Benjamin-Dobell/luabundle/issues",
+	"bugs": "https://github.com/Heyter/gluabundle/issues",
 	"dependencies": {
 		"gluaparse": "git+https://github.com/WilliamVenner/glua.js.git"
 	},
@@ -19,7 +19,7 @@
 	"engines": {
 		"node": ">=8.0.0"
 	},
-	"homepage": "https://github.com/Heyter/luabundle",
+	"homepage": "https://github.com/Heyter/gluabundle",
 	"keywords": [
 		"lua",
 		"require",
@@ -29,7 +29,7 @@
 	],
 	"license": "MIT",
 	"main": "dist/index.js",
-	"repository": "Heyter/luabundle",
+	"repository": "Heyter/gluabundle",
 	"scripts": {
 		"build": "esbuild ./src/index.ts --bundle --platform=node --outfile=dist/index.js",
 		"prepare": "npm run build",
