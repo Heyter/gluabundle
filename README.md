@@ -3,11 +3,7 @@ luabundle
 
 A library for bundling several Lua files into a single file.
 
-If you're after a CLI tool, please see [luabundler](https://github.com/Benjamin-Dobell/luabundler), which utilises this library.
-
-[![Version](https://img.shields.io/npm/v/luabundle.svg)](https://npmjs.org/package/luabundle)
-[![Downloads/week](https://img.shields.io/npm/dw/luabundle.svg)](https://npmjs.org/package/luabundle)
-[![License](https://img.shields.io/npm/l/luabundle.svg)](https://github.com/Benjamin-Dobell/luabundle/blob/master/package.json)
+If you're after a CLI tool, please see [luabundler](https://github.com/Heyter/gluabundle), which utilises this library.
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -29,7 +25,7 @@ npm install --save luabundle
 # Usage
 
 ```js
-import { bundle } from 'luabundle'
+import { bundle } from 'gluabundle'
 
 const bundledLua = bundle('./file.lua')
 // `bundledLua` now contains valid Lua which can be written straight to disk, stdout etc.
@@ -95,7 +91,7 @@ The default behaviour (`paths` option omitted) is to resolve module names relati
 type ExpressionHandler = (module: Module, expression: Expression) => string | string[] | null | undefined | void
 ```
 
-`Expression` is a [moonsharp-luaparse](https://github.com/Benjamin-Dobell/moonsharp-luaparse) expression.
+`Expression` is a [gluaparse](https://github.com/everyday-as/glua.js/commits/master/) expression.
 
 `Module` is as described [above](#bundle-options).
 
