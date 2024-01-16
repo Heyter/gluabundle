@@ -1,4 +1,4 @@
-import {Expression} from 'moonsharp-luaparse'
+import {Expression} from 'gluaparse'
 
 import {Module} from './module'
 import {Identifiers, LuaVersion} from '../common/options'

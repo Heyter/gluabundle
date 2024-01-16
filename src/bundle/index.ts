@@ -13,6 +13,7 @@ import {defaultOptions, Options, RealizedOptions} from './options'
 
 import {processModule} from './process'
 import {generateMetadata} from '../metadata'
+import runtime from './runtime'
 
 function mergeOptions(options: Options): RealizedOptions {
 	return {
@@ -45,8 +46,6 @@ export function bundleString(lua: string, options: Options = {}): string {
 	}
 
 	const identifiers = realizedOptions.identifiers
-	const runtime = readFileSync(resolvePath(__dirname, './runtime.lua'), 'utf8')
-
 	let bundle = ''
 
 	if (realizedOptions.metadata) {

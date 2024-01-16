@@ -1,5 +1,4 @@
-import {version} from '../package.json'
-
+const version = '1.7.0'
 import {defaultOptions as defaultBundleOptions, RealizedOptions as BundleOptions} from '../bundle/options'
 
 import {RecursivePartial} from '../common/utility'
@@ -64,9 +63,8 @@ function parseMetadata(line: string): Metadata | null {
 	if (match) {
 		const metadata = JSON.parse(match[1])
 
-		if (!metadata['version']) {
+		if (!metadata['version'])
 			throw new MalformedBundleError('Bundle contains invalid metadata')
-		}
 
 		return metadata as Metadata
 	}
@@ -78,16 +76,10 @@ export function readMetadata(lua: string): Metadata | null {
 	// We'll allow users to inject comments and blank lines above our header, but that's it (no code).
 	for (let [start, end] = [0, lua.indexOf('\n')]; end !== -1; start = end + 1, end = lua.indexOf('\n', start)) {
 		const line = lua.substring(start, end)
-
-		if (line.length > 0 && !line.startsWith("--")) {
-			break
-		}
+		if (line.length > 0 && !line.startsWith("--")) break
 
 		const metadata = parseMetadata(line)
-
-		if (metadata) {
-			return metadata
-		}
+		if (metadata) return metadata
 	}
 
 	return null

@@ -1,3 +1,4 @@
+export default `
 (function(superRequire)
 	local loadingPlaceholder = {[{}] = true}
 
@@ -40,3 +41,4 @@
 
 	return require, loaded, register, modules
 end)
+`.trim()

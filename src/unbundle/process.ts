@@ -1,7 +1,7 @@
 import {
 	FunctionDeclaration,
-	parse as parseLua,
-} from 'moonsharp-luaparse'
+	parse as parseGLua,
+} from 'gluaparse'
 
 import {Module, ModuleMap} from './module'
 
@@ -44,7 +44,7 @@ function extractModule(lua: string, name: string, declaration: FunctionDeclarati
 export function processModules(lua: string, metadata: RealizedMetadata, options: RealizedOptions): ModuleMap {
 	const modules: ModuleMap = {}
 
-	const ast = parseLua(lua, {
+	const ast = parseGLua(lua, {
 		locations: true,
 		luaVersion: metadata.luaVersion,
 		ranges: true,
